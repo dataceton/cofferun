@@ -1,0 +1,7 @@
+div[data-coffee-order="powerUp"] {
+  display: none;
+}
+
+.achivment div[data-coffee-order="powerUp"] {
+  display: block;
+}

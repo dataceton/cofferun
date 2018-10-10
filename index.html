@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoffeeRun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <style>
+    form :focus:invalid {
+      border-color: #a94442;
+    }
+  </style>
+</head>
+<body class="container">
+  <header>
+    <h1>CoffeeRun</h1>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Coffe Order</label>
+            <input type="text" class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
+          </div>
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input type="email" class="form-control" name="emailAddress" id="emailInput" value="" required placeholder="dr@who.com">
+          </div>
+          <div class="radio">
+            <label for="#">
+              <input type="radio" name="size" value="short">
+              Short
+            </label>
+          </div>
+          <div class="radio">
+            <label for="#">
+              <input type="radio" name="size" value="tall" checked>
+              Tall
+            </label>
+          </div>
+          <div class="radio">
+            <label for="#">
+              <input type="radio" name="size" value="grande">
+              Grande
+            </label>
+          </div>
+          <div class="radio">
+            <label for="#">
+              <input type="radio" name="size" value="coffee-zilla">
+              Coffee-zilla
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select name="flavor" id="flavorShot" class="form-control">
+              <option value="">None</option>
+              <option value="caramel">Caramel</option>
+              <option value="almond">Almond</option>
+              <option value="mocha">Mocha</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+            <div data-coffee-order="range">
+              <input id="strengthLevel" name="strength" type="range" value="30">
+            </div>
+          </div>
+          <!-- <div class="form-group" data-coffee-order="powerUp">
+            <label for="powerUp">Power-up</label>
+            <select name="power-up" id="powerUp" class="form-control">
+              <option value="">None</option>
+              <option value="mind-reading">Mind reading</option>
+              <option value="time-trabel">Time travel</option>
+            </select>
+          </div> -->
+          <button type="sumbmit"class="btn btn-default">Submit</button>
+          <button type="reset"class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist"></div>
+      </div>
+    </div>
+  </section>
+  <div id="achivmentModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Achievement</h4>
+      </div>
+      <div class="modal-body">
+        <p>Congratulations. Such a perfect choose.</p><br>
+        <p>Do you want to unlock special coffee property?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-modal-button="yes">Yes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+</html>
